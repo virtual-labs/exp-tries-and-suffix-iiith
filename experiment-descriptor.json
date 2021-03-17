@@ -1,0 +1,196 @@
+{
+  "unit-type": "lu",
+  "label": "Tries and Suffix",
+  "basedir": ".",
+  "units": [
+    {
+      "unit-type": "aim"
+    },
+    {
+      "unit-type": "task",
+      "label": "Overview",
+      "content-type": "video",
+      "source": "overview.md",
+      "target": "overview.html"
+    },
+    {
+      "unit-type": "task",
+      "label": "Recap",
+      "content-type": "video",
+      "source": "recap.md",
+      "target": "recap.html"
+    },
+    {
+      "unit-type": "task",
+      "label": "Pre Test Quiz",
+      "content-type": "assesment",
+      "source": "pretest.js",
+      "target": "pretest.html"
+    },
+    {
+      "unit-type": "lu",
+      "label": "Searching in Tries",
+      "basedir": "searching-in-tries",
+      "units": [
+        {
+          "unit-type": "aim"
+        },
+        {
+          "unit-type": "task",
+          "label": "Overview",
+          "content-type": "video",
+          "source": "overview.md",
+          "target": "overview.html"
+        },
+	{
+          "unit-type": "task",
+          "label": "Basic Concept",
+          "content-type": "video",
+          "source": "basic-concept.md",
+          "target": "basic-concept.html"
+        },
+        {
+          "unit-type": "task",
+          "label": "Search Algorithm",
+          "content-type": "video",
+          "source": "search-algorithm.md",
+          "target": "search-algorithm.html"
+        },
+        {
+          "unit-type": "task",
+          "label": "Working with Tries: Demo",
+          "content-type": "simulation",
+          "source": "simulation/tries_demo.html",
+          "target": "tries_demo.html"
+        },
+	
+	{
+          "unit-type": "task",
+          "label": "Searching in Tries: Practice",
+          "content-type": "simulation",
+          "source": "simulation/search_practice.html",
+          "target": "search_practice.html"
+        },
+	{
+          "unit-type": "task",
+          "label": "Searching in Tries: Exercise",
+          "content-type": "simulation",
+          "source": "simulation/search_exercise.html",
+          "target": "search_exercise.html"
+        },
+        
+	{
+         "unit-type": "task",
+         "label": "Searching in Tries: Quiz",
+         "content-type": "assesment",
+         "source": "searching-in-tries-quiz.js",
+         "target": "searching-in-tries-quiz.html"
+       }
+      
+      ]
+    },
+   
+        {
+      "unit-type": "lu",
+      "label": "Inserting into Tries",
+      "basedir": "inserting-into-tries",
+      "units": [
+        {
+          "unit-type": "aim"
+        },
+	{
+          "unit-type": "task",
+          "label": "Overview",
+          "content-type": "video",
+          "source": "overview.md",
+          "target": "overview.html"
+        },
+        {
+          "unit-type": "task",
+          "label": "How to Insert",
+          "content-type": "video",
+          "source": "how to-insert.md",
+          "target": "how to-insert.html"
+        },
+{
+          "unit-type": "task",
+          "label": "Insertion in Tries: Exercise",
+          "content-type": "simulation",
+          "source": "simulation/insert_exercise.html",
+          "target": "insert_exercise.html"
+        },
+        {
+          "unit-type": "task",
+          "label": "Path Compression",
+          "content-type": "video",
+          "source": "path-compression.md",
+          "target": "path-compression.html"
+        },
+        {
+          "unit-type": "task",
+          "label": "Insertion in Tries: Quiz",
+          "content-type": "assesment",
+          "source": "insertion-in-tries-quiz.js",
+          "target": "insertion-in-tries-quiz.html"
+        }
+      ]
+    },
+
+  {
+      "unit-type": "lu",
+      "label": "Suffix Tries",
+      "basedir": "suffix-tries",
+      "units": [
+        {
+          "unit-type": "aim"
+        },
+	{
+          "unit-type": "task",
+          "label": "Overview",
+          "content-type": "video",
+          "source": "overview.md",
+          "target": "overview.html"
+        },
+
+        {
+          "unit-type": "task",
+          "label": "Suffix Tries: Motivation",
+          "content-type": "video",
+          "source": "suffix-tries-motivation.md",
+          "target": "suffix-tries-motivation.html"
+        },
+	{
+          "unit-type": "task",
+          "label": "Suffix Tries: Demo",
+          "content-type": "simulation",
+          "source": "simulation/suffix_demo.html",
+          "target": "suffix_demo.html"
+        }
+
+      ]
+    },
+
+    {
+          "unit-type": "task",
+          "label": "Post Test Quiz Instructions",
+          "content-type": "video",
+          "source": "post-test.md",
+          "target": "post-test.html"
+        },
+    {
+      "unit-type": "task",
+      "label": "Post Test Quiz",
+      "content-type": "assesment",
+      "source": "posttest.js",
+      "target": "posttest.html"
+    },
+       
+    {
+      "unit-type": "task",
+      "label": "Further Readings/References",
+      "content-type": "text",
+      "source": "further-reading-and-references.md",
+      "target": "further-reading-and-references.html"
+    }
+  ]
+}

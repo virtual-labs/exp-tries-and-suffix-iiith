@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+      <title>Tries and Suffix Tries</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css">
+      <link href="css/style_main.css" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/common-styles.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-12">
+              <div class="instruction-box">
+                <button class="collapsible">Instructions</button>
+                <div class="content">
+                  <ul>
+                    <li>Type in a word in the <b>INSERT BOX</b> and hit
+                      the INSERT BUTTON.</li>
+                    <li>The word would be attached to the trie, step by
+                      step.  Understand the steps well.</li>
+                    <li>Repeat this, adding a few more words and observing
+                      the pattern.</li>
+                    <li>Type in a word in the <b>SEARCH BOX</b> and hit
+                      the SEARCH BUTTON.</li>
+                    <li>The word would be searched for, nodes being
+                      colored one by one. Observe the patten.</li>
+                    <li>Hit reset searches to clear all colored nodes, and
+                      reset inserts to start afresh.</li>
+                    <li>You can click on the tiny black button at the
+                      top-right corner of any card to collapse it.</li>
+                  </ul> 
+                </div>
+              </div>
+              
+          </div>
+      </div>
+      <div class="row" style="margin-top: 21px;">
+           <div class="col-sm-6">
+              <ul class="legend" style="padding-top:10px;">
+                <li><span class="blue"></span> Unselected</li>
+                <li><span class="green"></span> Search Path</li>
+              </ul>
+              
+           </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+           <div class="input-group">
+              <span class="input-group-addon">Insert</span>
+              <input id="insertion-suffix-text" type="text" class="form-control" name="insert-text" placeholder="Word to Insert">
+           </div>
+        </div>
+        <div class="col-sm-2">
+            <button id="insertion-suffix-submit" type="button" class="btn btn-primary btn-block">Insert</button> 
+        </div> 
+        <div class="col-sm-2">
+            <button id="reset-insert-suffix" type="button" class="btn btn-primary btn-block">Reset Inserts</button> 
+        </div> 
+      </div>
+      <br/>
+      
+      <div class="row">
+        <div class="col-sm-8">
+           <div class="input-group">
+              <span class="input-group-addon">Search</span>
+              <input id="search-suffix-text" type="text" class="form-control" name="search-text" placeholder="Word to Search">
+           </div>
+        </div>
+        <div class="col-sm-2">
+             <button id="search-suffix-submit" type="button" class="btn btn-primary btn-block">Search</button> 
+        </div> 
+        <div class="col-sm-2">
+             <button id="reset-search-suffix" type="button" class="btn btn-primary btn-block">Reset Searches</button> 
+        </div> 
+      </div>
+      
+      <div class="row">
+        <div class="chart" id="render-5"></div>
+      </div>
+      
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
+<script src="../../assets/js/instruction-box.js"></script>
+    <script type="text/javascript" src="js/tries_main.js"></script>
+    <script type="text/javascript" src="js/suffix_dm.js"></script>
+    <script type="text/javascript">
+    var suffix = new SuffixTrie("#render-5");
+    $('#insertion-suffix-submit').click(function () {
+        suffix.prepare($('#insertion-suffix-text').val());
+    });
+    $('#search-suffix-submit').click(function () {
+        suffix.search($('#search-suffix-text').val());
+    });
+    $('#reset-search-suffix').click(function () {
+        $('.node').removeClass('active');
+    });
+    $('#reset-insert-suffix').click(function () {
+        suffix.graph.tree.reload();
+    });
+    </script>
+  </body>
+</html>
