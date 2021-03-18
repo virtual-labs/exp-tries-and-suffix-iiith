@@ -89,7 +89,7 @@
 
 
     const myQuestions = [{
-            question: "1. How many children would the root (^) have in the suffix tree of the word "SHESELLSSEASHELLS"?", ///// Write the question inside double quotes
+            question: "1. How many children would the root (^) have in the suffix tree of the word 'SHESELLSSEASHELLS'?", ///// Write the question inside double quotes
             answers: {
                 a: "3", ///// Write the option 1 inside double quotes
                 b: "5", ///// Write the option 2 inside double quotes
