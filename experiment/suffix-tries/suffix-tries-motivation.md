@@ -9,3 +9,4 @@ Now that we know how to search for a string in a list of strings, let's turn to 
    - We can use a compressed trie to store this in O(n) space, since there are O(n) unique suffixes in a text of length n.
 
 ### Search in a Text editor can be implemented this way.
+<img src="images/vscode-search.png"/>

@@ -9,9 +9,9 @@
 
 This experiment requires you to have basic knowledge about :
 
-   - What a Tree is (parent, child, subtree in a tree)
-   - What Prefixes and Suffixes of a word are
-   - A basic understanding of what space and time complexity is
+   - [What a Tree is (parent, child, subtree in a tree)](https://en.wikipedia.org/wiki/Tree_(data_structure))
+   - [What Prefixes and Suffixes of a word are](https://www.enchantedlearning.com/grammar/prefixsuffix/index.shtml)
+   - [A basic understanding of what space and time complexity is](https://en.wikipedia.org/wiki/Time_complexity)
 
 And above all, a curiosity to learn and explore!
 
