@@ -100,13 +100,7 @@
           "source": "how to-insert.md",
           "target": "how to-insert.html"
         },
-{
-          "unit-type": "task",
-          "label": " Exercise",
-          "content-type": "simulation",
-          "source": "simulation/insert_exercise.html",
-          "target": "insert_exercise.html"
-        },
+
         {
           "unit-type": "task",
           "label": "Path Compression",

@@ -1,4 +1,4 @@
-### A Short Introduction to the Overall Experiment
+
 <iframe src="https://www.youtube.com/embed/vm49ohZ_jwA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### Prerequisites of the Experiment
