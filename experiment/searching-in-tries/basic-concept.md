@@ -1,3 +1,6 @@
+### Searching in Tries: Concept
+<iframe src="https://www.youtube.com/embed/s_t4vnHmN5k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ### Search a word from a list - Naive Approach
 
 Let's say we have a huge list of words, for example a Dictionary (Here in this example our list is [CAT, CAP, CAN, CADET]). You want to find out whether or not a word, let's say CABLE, is in this list. The naive approach to solving this problem is as follows.

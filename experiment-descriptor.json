@@ -35,16 +35,10 @@
         {
           "unit-type": "aim"
         },
-        {
-          "unit-type": "task",
-          "label": "Overview",
-          "content-type": "video",
-          "source": "overview.md",
-          "target": "overview.html"
-        },
+        
 	{
           "unit-type": "task",
-          "label": "Basic Concept",
+          "label": "Concept",
           "content-type": "video",
           "source": "basic-concept.md",
           "target": "basic-concept.html"
@@ -98,16 +92,10 @@
         {
           "unit-type": "aim"
         },
-	{
-          "unit-type": "task",
-          "label": "Overview",
-          "content-type": "video",
-          "source": "overview.md",
-          "target": "overview.html"
-        },
+	
         {
           "unit-type": "task",
-          "label": "How to Insert",
+          "label": "Insert",
           "content-type": "video",
           "source": "how to-insert.md",
           "target": "how to-insert.html"
@@ -154,7 +142,7 @@
 
         {
           "unit-type": "task",
-          "label": " Motivation",
+          "label": " Patterns",
           "content-type": "video",
           "source": "suffix-tries-motivation.md",
           "target": "suffix-tries-motivation.html"

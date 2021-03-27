@@ -126,7 +126,7 @@
       answers: {
         a: "In the Search feature of Microsoft Word. ",                  ///// Write the option 1 inside double quotes
         b: "In sorting emails based on date. ",                  ///// Write the option 2 inside double quotes
-	c: "In Matching >Regular Expressions. (Patters of Text) ", ///// Write the option 3 inside double quotes
+	c: "In Matching >[Regular Expressions](https://en.wikipedia.org/wiki/Regular_expression). (Patters of Text) ", ///// Write the option 3 inside double quotes
         d: "Finnding synonyms from a Dictionary ", ///// Write the option 4 inside double quotes
 	e: "Suggesting autocomplete as you are typing.  ", ///// Write the option 5 inside double quotes
               },
