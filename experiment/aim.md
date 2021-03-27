@@ -1,3 +1,7 @@
+### Estimated Time
+
+1.5 hours
+
 ### Learning Objectives of the Experiment
 
 In this experiment, you will be able to do the following:

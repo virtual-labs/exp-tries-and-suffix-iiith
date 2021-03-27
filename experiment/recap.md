@@ -10,17 +10,6 @@ A tree is a Data Structure which is arranged in the form of multiple nodes holdi
   -  Time complexity of an algorithm gives the measure of time taken by it to run as a function of the length of the input. Similarly, Space complexity of an algorithm quantifies the amount of space or memory taken by an algorithm to run as a function of the length of the input.
   -  Recall that if our word list (the one we are searching through) is an array of length N, and our algorithm iterates through the array once, then time complexity will be O(N). If for each element we have to perform m operations, where m is the length of the word, then the algorithm is O(NM).
 
-### Estimated Time for Pre Test Quiz
-
-10 minutes
-
-### Instructions for Pre Test Quiz
-
-   - Pretest includes questions on **what prefix and suffix are and parent-child relationships in trees**.
-   - If you want to revise these topics before taking the quiz, go through the Recap module first.
-   - Read the questions in the quiz section and select the correct option from the ones provided. Please note that some **questions may have more than one correct response**.
-
-
 
 
 

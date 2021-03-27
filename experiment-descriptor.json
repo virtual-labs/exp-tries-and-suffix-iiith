@@ -35,30 +35,24 @@
         {
           "unit-type": "aim"
         },
-        {
-          "unit-type": "task",
-          "label": "Overview",
-          "content-type": "video",
-          "source": "overview.md",
-          "target": "overview.html"
-        },
+        
 	{
           "unit-type": "task",
-          "label": "Basic Concept",
+          "label": "Concept",
           "content-type": "video",
           "source": "basic-concept.md",
           "target": "basic-concept.html"
         },
         {
           "unit-type": "task",
-          "label": "Search Algorithm",
+          "label": " Algorithm",
           "content-type": "video",
           "source": "search-algorithm.md",
           "target": "search-algorithm.html"
         },
         {
           "unit-type": "task",
-          "label": "Working with Tries: Demo",
+          "label": " Demo",
           "content-type": "simulation",
           "source": "simulation/tries_demo.html",
           "target": "tries_demo.html"
@@ -66,14 +60,14 @@
 	
 	{
           "unit-type": "task",
-          "label": "Searching in Tries: Practice",
+          "label": " Practice",
           "content-type": "simulation",
           "source": "simulation/search_practice.html",
           "target": "search_practice.html"
         },
 	{
           "unit-type": "task",
-          "label": "Searching in Tries: Exercise",
+          "label": " Exercise",
           "content-type": "simulation",
           "source": "simulation/search_exercise.html",
           "target": "search_exercise.html"
@@ -81,7 +75,7 @@
         
 	{
          "unit-type": "task",
-         "label": "Searching in Tries: Quiz",
+         "label": " Quiz",
          "content-type": "assesment",
          "source": "searching-in-tries-quiz.js",
          "target": "searching-in-tries-quiz.html"
@@ -98,27 +92,15 @@
         {
           "unit-type": "aim"
         },
-	{
-          "unit-type": "task",
-          "label": "Overview",
-          "content-type": "video",
-          "source": "overview.md",
-          "target": "overview.html"
-        },
+	
         {
           "unit-type": "task",
-          "label": "How to Insert",
+          "label": "Insert",
           "content-type": "video",
           "source": "how to-insert.md",
           "target": "how to-insert.html"
         },
-{
-          "unit-type": "task",
-          "label": "Insertion in Tries: Exercise",
-          "content-type": "simulation",
-          "source": "simulation/insert_exercise.html",
-          "target": "insert_exercise.html"
-        },
+
         {
           "unit-type": "task",
           "label": "Path Compression",
@@ -128,7 +110,7 @@
         },
         {
           "unit-type": "task",
-          "label": "Insertion in Tries: Quiz",
+          "label": " Quiz",
           "content-type": "assesment",
           "source": "insertion-in-tries-quiz.js",
           "target": "insertion-in-tries-quiz.html"
@@ -154,14 +136,14 @@
 
         {
           "unit-type": "task",
-          "label": "Suffix Tries: Motivation",
+          "label": " Patterns",
           "content-type": "video",
           "source": "suffix-tries-motivation.md",
           "target": "suffix-tries-motivation.html"
         },
 	{
           "unit-type": "task",
-          "label": "Suffix Tries: Demo",
+          "label": "Demo",
           "content-type": "simulation",
           "source": "simulation/suffix_demo.html",
           "target": "suffix_demo.html"
