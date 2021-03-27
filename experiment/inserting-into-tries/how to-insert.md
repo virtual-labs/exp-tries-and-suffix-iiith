@@ -1,3 +1,5 @@
+<iframe src="https://www.youtube.com/embed/6ZX27fmJD7o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ### Insertion Algorithm
 
 We have understood what a trie is and how we can use one to search for words. Now let's take a look into how we can contruct a trie out of a collection of words by inserting each word into the trie one by one:

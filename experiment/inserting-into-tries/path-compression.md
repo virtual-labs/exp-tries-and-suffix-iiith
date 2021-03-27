@@ -4,6 +4,7 @@ Again in our Trie, we see that there are multiple nodes each storing one letter,
 
 ### A Compressed Trie
 <img src="images/path-compression.png"/>
+
 ### Bounds on Complexity
 
 Now we can prove stronger upper bounds on the memory complexity of the Trie.
