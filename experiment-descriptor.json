@@ -21,13 +21,6 @@
       "target": "recap.html"
     },
     {
-      "unit-type": "task",
-      "label": "Pre Test Quiz",
-      "content-type": "assesment",
-      "source": "pretest.js",
-      "target": "pretest.html"
-    },
-    {
       "unit-type": "lu",
       "label": "Searching in Tries",
       "basedir": "searching-in-tries",
@@ -71,15 +64,7 @@
           "content-type": "simulation",
           "source": "simulation/search_exercise.html",
           "target": "search_exercise.html"
-        },
-        
-	{
-         "unit-type": "task",
-         "label": " Quiz",
-         "content-type": "assesment",
-         "source": "searching-in-tries-quiz.js",
-         "target": "searching-in-tries-quiz.html"
-       }
+        }
       
       ]
     },
@@ -107,13 +92,6 @@
           "content-type": "video",
           "source": "path-compression.md",
           "target": "path-compression.html"
-        },
-        {
-          "unit-type": "task",
-          "label": " Quiz",
-          "content-type": "assesment",
-          "source": "insertion-in-tries-quiz.js",
-          "target": "insertion-in-tries-quiz.html"
         }
       ]
     },
@@ -151,14 +129,6 @@
 
       ]
     },
-    {
-      "unit-type": "task",
-      "label": "Post Test Quiz",
-      "content-type": "assesment",
-      "source": "posttest.js",
-      "target": "posttest.html"
-    },
-       
     {
       "unit-type": "task",
       "label": "Further Readings/References",
