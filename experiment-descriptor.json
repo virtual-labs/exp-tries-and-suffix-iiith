@@ -22,8 +22,8 @@
     },
 {
       "unit-type": "task",
-      "label": "Quiz",
-      "content-type": "video",
+      "label": "Pretest",
+      "content-type": "assesment",
       "source": "pretest.json",
       "target": "pretest.html"
     },
@@ -75,7 +75,7 @@
 	{
       "unit-type": "task",
       "label": "Quiz",
-      "content-type": "video",
+      "content-type": "assesment",
       "source": "searching-in-tries-quiz.json",
       "target": "searching-in-tries-quiz.html"
     }
@@ -112,7 +112,7 @@
 	{
       "unit-type": "task",
       "label": "Quiz",
-      "content-type": "video",
+      "content-type": "assesment",
       "source": "insertion-in-tries-quiz.json",
       "target": "insertion-in-tries-quiz.html"
     },
@@ -152,8 +152,8 @@
     },
 	{
       "unit-type": "task",
-      "label": "Quiz",
-      "content-type": "video",
+      "label": "Posttest",
+      "content-type": "assesment",
       "source": "posttest.json",
       "target": "posttest.html"
     },
