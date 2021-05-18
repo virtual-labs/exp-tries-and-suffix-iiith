@@ -1,0 +1,29 @@
+[{
+	"question": "1. There is a Trie with the words [ CAT, CAGGLE, COG, CANOPY, CATIS ]. How many nodes does this Trie have including the start and end nodes?",
+	"answers": {
+		"a": "5 Nodes",
+		"b": "16 Nodes",
+		"c": "21 Nodes",
+		"d": "22 Nodes "
+	},
+	"correctAnswer": "c"
+}, {
+	"question": "2. What is the memory complexity of a Trie with no path compression?",
+	"answers": {
+		"a": "O(Number of Words)",
+		"b": "O(Length of the Longest Word) ",
+		"c": "O(Sum of Lengths of Words)",
+		"d": "O(Total Number of Unique Characters) "
+	},
+	"correctAnswer": "c"
+}, {
+	"question": "3. In the Trie with words [ HELLO, HELSINKI, HILBERT ] we are adding in the word HILLS. How many nodes will be created and added in this process?",
+	"answers": {
+		"a": "0 Nodes",
+		"b": "5 Nodes ",
+		"c": "2 Nodes",
+		"d": " 3 Nodes",
+		"e": " 1 Node "
+	},
+	"correctAnswer": "d"
+}]

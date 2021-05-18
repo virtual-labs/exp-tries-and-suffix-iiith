@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-17 Wed 07:42 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Demonstration artefact for Insertion and Search in Tries</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="AnimeshSinha" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Demonstration artefact for Insertion and Search in Tries</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org933676b">1. Features of the artefact</a></li>
+<li><a href="#org3f3c026">2. Setting up the the HTML and fetching all dependencies</a>
+<ul>
+<li><a href="#org9061c2a">2.1. Head Section Elements</a></li>
+<li><a href="#orga042bb4">2.2. Instruction Box</a></li>
+<li><a href="#orgdf3fa63">2.3. Legend</a></li>
+<li><a href="#orgc84c85f">2.4. Question box</a></li>
+<li><a href="#orgc907ef6">2.5. Comments Box</a></li>
+<li><a href="#org4b916fb">2.6. Artefact Section</a></li>
+<li><a href="#orgb6aebcc">2.7. Calling necessary JAVASCRIPT dependencies</a></li>
+<li><a href="#orge0e6b78">2.8. Javascript for artefact</a>
+<ul>
+<li><a href="#org3339117">2.8.1. Fetching the JAVASCRIPT dependency from the associated artefacts directory</a></li>
+<li><a href="#org1bac6e6">2.8.2. Declaration of the variables that initialize the trie</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org91a23f5">3. Tangle</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org933676b" class="outline-2">
+<h2 id="org933676b"><span class="section-number-2">1</span> Features of the artefact</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>This aretefact implements the practice for searching in
+Tries</li>
+<li>It prints out a word that the user needs to search for</li>
+<li>As the user clicks the nodes they get highlighted</li>
+<li>The user can check his answer, all the correct nodes will
+be colored gree, red/black otherwise.</li>
+<li>Next, a new question will start off</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3f3c026" class="outline-2">
+<h2 id="org3f3c026"><span class="section-number-2">2</span> Setting up the the HTML and fetching all dependencies</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org9061c2a" class="outline-3">
+<h3 id="org9061c2a"><span class="section-number-3">2.1</span> Head Section Elements</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Title, meta tags and all the links related to CSS of this
+artefact comes under this section.  Calling Bootstrap and
+Treant CSS, andjQuery
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="org980ffdf">  &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Tries and Suffix Tries</span>&lt;/<span style="font-weight: bold;">title</span>&gt;
+  &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">charset</span>=<span style="font-style: italic;">"utf-8"</span>&gt;
+  &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">http-equiv</span>=<span style="font-style: italic;">"X-UA-Compatible"</span> <span style="font-weight: bold; font-style: italic;">content</span>=<span style="font-style: italic;">"IE=edge,chrome=1"</span>&gt;
+  &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"viewport"</span> <span style="font-weight: bold; font-style: italic;">content</span>=<span style="font-style: italic;">"width=device-width, initial-scale=1"</span>&gt;
+  &lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"</span>&gt;  
+  &lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css"</span>&gt;
+  &lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"../css/style_main.css"</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span>&gt;
+  &lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"https://ds1-iiith.vlabs.ac.in/exp-common-css/common-styles.css"</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga042bb4" class="outline-3">
+<h3 id="orga042bb4"><span class="section-number-3">2.2</span> Instruction Box</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+This is an instruction box, in which the instructions needed
+for the user to perform the experiments are displayed in a
+form of list.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="org1e40908">&lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"instruction-box"</span>&gt;
+  &lt;<span style="font-weight: bold;">button</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"collapsible"</span>&gt;Instructions&lt;/<span style="font-weight: bold;">button</span>&gt;
+  &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"content"</span>&gt;
+    &lt;<span style="font-weight: bold;">ul</span>&gt;
+      &lt;<span style="font-weight: bold;">li</span>&gt;You can see a word at the bottom of the screen saying &lt;<span style="font-weight: bold;">b</span>&gt;<span style="font-weight: bold;">Search</span>
+<span style="font-weight: bold;">          For</span>&lt;/<span style="font-weight: bold;">b</span>&gt;.&lt;/<span style="font-weight: bold;">li</span>&gt;
+      &lt;<span style="font-weight: bold;">li</span>&gt;Try searching for this word. Click the nodes as you would
+        find them in search one by one.&lt;/<span style="font-weight: bold;">li</span>&gt;
+      &lt;<span style="font-weight: bold;">li</span>&gt;The nodes will be highlighted in ORANGE, and you can click again
+        to turn it off (i.e.going back on your move).&lt;/<span style="font-weight: bold;">li</span>&gt;
+      &lt;<span style="font-weight: bold;">li</span>&gt;Once you are done with the search, if the word exists click
+        &lt;<span style="font-weight: bold;">b</span>&gt;<span style="font-weight: bold;">STRING FOUND</span>&lt;/<span style="font-weight: bold;">b</span>&gt;, otherwise click&lt;<span style="font-weight: bold;">b</span>&gt;<span style="font-weight: bold;">SEARCH FAILED</span>&lt;/<span style="font-weight: bold;">b</span>&gt;.&lt;/<span style="font-weight: bold;">li</span>&gt;
+      &lt;<span style="font-weight: bold;">li</span>&gt;The text at the bottom will tell you if the search was executed
+        correctly or not.&lt;/<span style="font-weight: bold;">li</span>&gt;
+      &lt;<span style="font-weight: bold;">li</span>&gt;Click TRY ANOTHER WORD for working on the next question, and
+        repeat this a few times until you are comfortable.&lt;/<span style="font-weight: bold;">li</span>&gt;
+    &lt;/<span style="font-weight: bold;">ul</span>&gt;
+  &lt;/<span style="font-weight: bold;">div</span>&gt;
+&lt;/<span style="font-weight: bold;">div</span>&gt;
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdf3fa63" class="outline-3">
+<h3 id="orgdf3fa63"><span class="section-number-3">2.3</span> Legend</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+This is a legend, that can referred to when observing.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="org1dbbee5">&lt;<span style="font-weight: bold;">ul</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"legend"</span> <span style="font-weight: bold; font-style: italic;">style</span>=<span style="font-style: italic;">"padding-top:10px;"</span>&gt;
+  &lt;<span style="font-weight: bold;">li</span>&gt;&lt;<span style="font-weight: bold;">span</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"blue"</span>&gt;&lt;/<span style="font-weight: bold;">span</span>&gt; Unselected&lt;/<span style="font-weight: bold;">li</span>&gt;
+  &lt;<span style="font-weight: bold;">li</span>&gt;&lt;<span style="font-weight: bold;">span</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"orange"</span>&gt;&lt;/<span style="font-weight: bold;">span</span>&gt; Selected&lt;/<span style="font-weight: bold;">li</span>&gt;
+  &lt;<span style="font-weight: bold;">li</span>&gt;&lt;<span style="font-weight: bold;">span</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"green"</span>&gt;&lt;/<span style="font-weight: bold;">span</span>&gt; Selected and Correct&lt;/<span style="font-weight: bold;">li</span>&gt;
+  &lt;<span style="font-weight: bold;">li</span>&gt;&lt;<span style="font-weight: bold;">span</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"red"</span>&gt;&lt;/<span style="font-weight: bold;">span</span>&gt; Selected and Wrong&lt;/<span style="font-weight: bold;">li</span>&gt;
+  &lt;<span style="font-weight: bold;">li</span>&gt;&lt;<span style="font-weight: bold;">span</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"black"</span>&gt;&lt;/<span style="font-weight: bold;">span</span>&gt; Unselected and Wrong&lt;/<span style="font-weight: bold;">li</span>&gt;
+&lt;/<span style="font-weight: bold;">ul</span>&gt;
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc84c85f" class="outline-3">
+<h3 id="orgc84c85f"><span class="section-number-3">2.4</span> Question box</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+This is a box in which the question gets displayed.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="org0909347">&lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"comment-box"</span>&gt;
+  &lt;<span style="font-weight: bold;">b</span>&gt;<span style="font-weight: bold;">Find in the Trie</span><span style="font-weight: bold; font-style: italic;">&amp;nbsp;</span>&lt;/<span style="font-weight: bold;">b</span>&gt;
+  &lt;<span style="font-weight: bold;">p</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"searchexercise-searching-for"</span>&gt; &lt;/<span style="font-weight: bold;">p</span>&gt;
+&lt;/<span style="font-weight: bold;">div</span>&gt;
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc907ef6" class="outline-3">
+<h3 id="orgc907ef6"><span class="section-number-3">2.5</span> Comments Box</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+This is a box in which the comments gets displayed, based on
+what is happening currently in the artefact.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="org125ccd4">&lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"comment-box"</span>&gt;
+  &lt;<span style="font-weight: bold;">b</span>&gt;<span style="font-weight: bold;">Observations</span>&lt;/<span style="font-weight: bold;">b</span>&gt;
+  &lt;<span style="font-weight: bold;">p</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"searchexercise-result"</span>&gt;Let's try searching some words&lt;/<span style="font-weight: bold;">p</span>&gt;
+&lt;/<span style="font-weight: bold;">div</span>&gt;
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4b916fb" class="outline-3">
+<h3 id="org4b916fb"><span class="section-number-3">2.6</span> Artefact Section</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+Sets up the HTML for the following so that following
+JavaScript can interact with the user through it:
+</p>
+<ul class="org-ul">
+<li>Suffix Trie Rendering Block. (#render-2)</li>
+<li>Text-Box that shows the user what word is to be searched
+for (#bindings-2)</li>
+<li>Search Succeded, Search Failed, and Next Question
+buttons. (#bindings-2)</li>
+</ul>
+<p>
+This is the entire HTML layout for the artefact.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="org7778bce">&lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"row"</span>&gt;
+  &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"chart"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"render-2"</span>&gt;&lt;/<span style="font-weight: bold;">div</span>&gt;
+&lt;/<span style="font-weight: bold;">div</span>&gt;
+
+&lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"row"</span>&gt;
+   &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn-group btn-group-justified"</span>&gt;
+      &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"#"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"found-searchexercise"</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-primary"</span>&gt;String Found&lt;/<span style="font-weight: bold;">a</span>&gt;
+      &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"#"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"reset-searchexercise"</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-primary"</span>&gt;Try Another Word&lt;/<span style="font-weight: bold;">a</span>&gt;
+      &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"#"</span>  <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"failed-searchexercise"</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"btn btn-primary"</span>&gt;Search Failed&lt;/<span style="font-weight: bold;">a</span>&gt;
+   &lt;/<span style="font-weight: bold;">div</span>&gt; 
+  &lt;/<span style="font-weight: bold;">div</span>&gt; 
+&lt;/<span style="font-weight: bold;">div</span>&gt;
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb6aebcc" class="outline-3">
+<h3 id="orgb6aebcc"><span class="section-number-3">2.7</span> Calling necessary JAVASCRIPT dependencies</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+Fetching jQuery, raphael, Treant.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="org76a3507">&lt;<span style="font-weight: bold;">script</span>
+  <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"https://code.jquery.com/jquery-3.4.0.min.js"</span>
+  <span style="font-weight: bold; font-style: italic;">integrity</span>=<span style="font-style: italic;">"sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="</span>
+  <span style="font-weight: bold; font-style: italic;">crossorigin</span>=<span style="font-style: italic;">"anonymous"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"https://ds1-iiith.vlabs.ac.in/exp-common-js/instruction-box.js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge0e6b78" class="outline-3">
+<h3 id="orge0e6b78"><span class="section-number-3">2.8</span> Javascript for artefact</h3>
+<div class="outline-text-3" id="text-2-8">
+</div>
+<div id="outline-container-org3339117" class="outline-4">
+<h4 id="org3339117"><span class="section-number-4">2.8.1</span> Fetching the JAVASCRIPT dependency from the associated artefacts directory</h4>
+<div class="outline-text-4" id="text-2-8-1">
+<p>
+The Classes fetched are:
+</p>
+<ul class="org-ul">
+<li>Trie (General Trie-Rendering class)</li>
+<li>SearchExercise (Quiz the user on searching and let him check his answers)</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-html" id="orgb80b2f0">&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"text/javascript"</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"../js/tries_main.js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"text/javascript"</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"../js/search_ex.js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1bac6e6" class="outline-4">
+<h4 id="org1bac6e6"><span class="section-number-4">2.8.2</span> Declaration of the variables that initialize the trie</h4>
+<div class="outline-text-4" id="text-2-8-2">
+<p>
+The words that will be present in the trie and the words
+which will not be, all comprising a list of possible queries
+is defined here. Then the bindings for the buttons and
+activation of the nodes to a click response is generated.
+</p>
+<div class="org-src-container">
+<pre class="src src-html" id="orgfb249d4">&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"text/javascript"</span>&gt;
+let positive = [<span style="font-style: italic;">"Hello"</span>, <span style="font-style: italic;">"Friend"</span>, <span style="font-style: italic;">"Animesh"</span>, <span style="font-style: italic;">"Ant"</span>, <span style="font-style: italic;">"Apple"</span>, <span style="font-style: italic;">"Asterisk"</span>]
+let negative = [<span style="font-style: italic;">"Hibernate"</span>, <span style="font-style: italic;">"Hysteria"</span>, <span style="font-style: italic;">"Friday"</span>, <span style="font-style: italic;">"App"</span>]
+var searchExercise = new SearchExercise(<span style="font-style: italic;">"#render-2"</span>, <span style="font-style: italic;">"#bindings-2"</span>, positive, negative);
+
+$('#searchexercise-searching-for').html(searchExercise.selectedWord);
+
+$('#found-searchexercise').click(function () {
+    if (searchExercise.check(true) === true) $('#searchexercise-result').html('You are Right.');
+    else $('#searchexercise-result').html('Sorry, Please try again.');
+});
+$('#failed-searchexercise').click(function () {
+    if (searchExercise.check(false) === true) $('#searchexercise-result').html('You are Right.');
+    else $('#searchexercise-result').html('Sorry, Please try again.');
+});
+$('#reset-searchexercise').click(function () {
+    searchExercise.begin();
+    $('#searchexercise-searching-for').html(searchExercise.selectedWord);
+    $('#searchexercise-result').html('Let\'s Try searching some words');
+});
+&lt;/<span style="font-weight: bold;">script</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org91a23f5" class="outline-2">
+<h2 id="org91a23f5"><span class="section-number-2">3</span> Tangle</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> HTML&gt;
+&lt;<span style="font-weight: bold;">html</span> <span style="font-weight: bold; font-style: italic;">lang</span>=<span style="font-style: italic;">"en"</span>&gt;
+  &lt;<span style="font-weight: bold;">head</span>&gt;
+    &lt;&lt;<span style="font-weight: bold;">head-section-elems</span>&gt;&gt;
+  &lt;/<span style="font-weight: bold;">head</span>&gt;
+  &lt;<span style="font-weight: bold;">body</span>&gt;
+    &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"container-fluid"</span>&gt;
+      &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"row"</span>&gt;
+          &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"col-sm-12"</span>&gt;
+              &lt;&lt;<span style="font-weight: bold;">instruction-box</span>&gt;&gt;
+          &lt;/<span style="font-weight: bold;">div</span>&gt;
+      &lt;/<span style="font-weight: bold;">div</span>&gt;
+      &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"row"</span> <span style="font-weight: bold; font-style: italic;">style</span>=<span style="font-style: italic;">"margin-top: 20px;"</span>&gt;
+           &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"col-sm-4"</span>&gt;
+              &lt;&lt;<span style="font-weight: bold;">legend</span>&gt;&gt;
+           &lt;/<span style="font-weight: bold;">div</span>&gt;
+           &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"col-sm-4"</span>&gt;
+              &lt;&lt;<span style="font-weight: bold;">question-box</span>&gt;&gt;
+           &lt;/<span style="font-weight: bold;">div</span>&gt;
+           &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">class</span>=<span style="font-style: italic;">"col-sm-4"</span>&gt;
+              &lt;&lt;<span style="font-weight: bold;">comments-box</span>&gt;&gt;
+           &lt;/<span style="font-weight: bold;">div</span>&gt;
+      &lt;/<span style="font-weight: bold;">div</span>&gt;
+      &lt;&lt;<span style="font-weight: bold;">artefact-section</span>&gt;&gt;
+    &lt;/<span style="font-weight: bold;">div</span>&gt;
+    &lt;&lt;<span style="font-weight: bold;">js-libs</span>&gt;&gt;
+    &lt;&lt;<span style="font-weight: bold;">main-js</span>&gt;&gt;
+    &lt;&lt;<span style="font-weight: bold;">js-event-handlers</span>&gt;&gt;
+  &lt;/<span style="font-weight: bold;">body</span>&gt;
+&lt;/<span style="font-weight: bold;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: AnimeshSinha</p>
+<p class="date">Created: 2021-03-17 Wed 07:42</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

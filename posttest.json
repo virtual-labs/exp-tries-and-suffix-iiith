@@ -1,0 +1,38 @@
+[{
+	"question": "1. How many children would the root (^) have in the suffix tree of the word 'SHESELLSSEASHELLS'?",
+	"answers": {
+		"a": "3",
+		"b": "5",
+		"c": "13",
+		"d": "17"
+	},
+	"correctAnswer": "b"
+}, {
+	"question": "2. In the suffix tree of 'SHESELLSSEASHELLS', S is a child of the root. How many direct children does this node containing S have?",
+	"answers": {
+		"a": "3 (H, E, S)",
+		"b": "3 (H, E, A) ",
+		"c": "4 (S, H, E, A",
+		"d": "Only 1 child "
+	},
+	"correctAnswer": "a"
+}, {
+	"question": "3. If you have a text file of n characters containing words all of which are under k characters in length, and you want to search for a word of length less than m in it, what can be the estimated complexity of this search? (Answers are in the form <PreprocessingTime, SearchTime>) Note: We are only trying to search for complete words, not patterns. ",
+	"answers": {
+		"a": "<O(N), O(K)>",
+		"b": "<O(N), O(M)>",
+		"c": "<O(NK), O(M)>",
+		"d": " <O(K), O(M)>"
+	},
+	"correctAnswer": "b"
+}, {
+	"question": "4. Which of the following tasks can a Trie or a Suffix Tree be used for? (Select ALL that apply)",
+	"answers": {
+		"a": "In the Search feature of Microsoft Word. ",
+		"b": "In sorting emails based on date. ",
+		"c": "In Matching >[Regular Expressions](https://en.wikipedia.org/wiki/Regular_expression). (Patters of Text) ",
+		"d": "Finnding synonyms from a Dictionary ",
+		"e": "Suggesting autocomplete as you are typing.  "
+	},
+	"correctAnswer": "b"
+}]

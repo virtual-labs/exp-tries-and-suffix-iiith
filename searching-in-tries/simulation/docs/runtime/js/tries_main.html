@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-17 Wed 07:42 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="AnimeshSinha" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org7e596fc">0.1. Please ensure that this is the FIRST CLASS included in any HTML or JAVASCRIPT file. This sets up RENDERING AND API for all subclasses, which is every class in the Demo.</a></li>
+</ul>
+</li>
+<li><a href="#org984b6f1">1. Demonstration artefact for Insertion and Search in Tries</a>
+<ul>
+<li><a href="#org91ea8ce">1.1. Features of the artefact</a></li>
+</ul>
+</li>
+<li><a href="#org0b697cf">2. JavaScript Code</a>
+<ul>
+<li><a href="#orgde4d070">2.1. Class constructor</a></li>
+<li><a href="#orgb635e98">2.2. Insert Methods</a></li>
+<li><a href="#org020160c">2.3. Search Methods</a></li>
+<li><a href="#org55339e0">2.4. Path Methods</a></li>
+</ul>
+</li>
+<li><a href="#orgaea4ebf">3. Tangle</a></div>
+</div>
+
+<div id="outline-container-org7e596fc" class="outline-3">
+<h3 id="org7e596fc"><span class="section-number-3">0.1</span> Please ensure that this is the FIRST CLASS included in any HTML or JAVASCRIPT file. This sets up RENDERING AND API for all subclasses, which is every class in the Demo.</h3>
+</div>
+
+<div id="outline-container-org984b6f1" class="outline-2">
+<h2 id="org984b6f1"><span class="section-number-2">1</span> Demonstration artefact for Insertion and Search in Tries</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org91ea8ce" class="outline-3">
+<h3 id="org91ea8ce"><span class="section-number-3">1.1</span> Features of the artefact</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>This class encapsulates the logic of rendering a Trie and generating a Visual Implementation for the Object model</li>
+<li>Allows for: Insertion of a new Word - insert(word)</li>
+<li>Allows for: Search for a Word in the Trie - search(word)</li>
+<li>Allows for: Get the path followed during a Search - path(word)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0b697cf" class="outline-2">
+<h2 id="org0b697cf"><span class="section-number-2">2</span> JavaScript Code</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgde4d070" class="outline-3">
+<h3 id="orgde4d070"><span class="section-number-3">2.1</span> Class constructor</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Creates an instance of a Trie taking in a container element and optionally the animation delay in insert or search.
+Initializes the style and structure for the Trie and the starting element.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js" id="orgb1ba8c0">
+<span style="font-weight: bold;">class</span> Trie {
+
+  constructor(container, animateDelay = 500) {
+    <span style="font-weight: bold; text-decoration: underline;">this</span>.container = container.substring(1);
+    <span style="font-weight: bold; text-decoration: underline;">this</span>.config = {
+      chart: {
+        <span style="font-style: italic;">"container"</span>: container,
+        <span style="font-style: italic;">"rootOrientation"</span>: <span style="font-style: italic;">"WEST"</span>,
+        <span style="font-style: italic;">"animation"</span>: {
+          <span style="font-style: italic;">"nodeSpeed"</span>: 500,
+          <span style="font-style: italic;">"nodeAnimation"</span>: <span style="font-style: italic;">"linear"</span>,
+          <span style="font-style: italic;">"connectorsSpeed"</span>: 500,
+          <span style="font-style: italic;">"connectorsAnimation"</span>: <span style="font-style: italic;">"linear"</span>
+        },
+        <span style="font-style: italic;">"node"</span>: {
+          <span style="font-style: italic;">"collapsable"</span>: <span style="font-weight: bold; text-decoration: underline;">false</span>
+        },
+        <span style="font-style: italic;">"connectors"</span>: {
+          <span style="font-style: italic;">"style"</span>: {
+            <span style="font-style: italic;">"stroke"</span>: <span style="font-style: italic;">"rgb(23, 102, 150)"</span>,
+            <span style="font-style: italic;">"stroke-opacity"</span>: 1.0
+          }
+        }
+      },
+      nodeStructure: {
+        <span style="font-style: italic;">"text"</span>: { <span style="font-style: italic;">"name"</span>: <span style="font-style: italic;">"^"</span> },
+      },
+      scrollbar: <span style="font-style: italic;">"fancy"</span>
+    };
+    <span style="font-weight: bold; text-decoration: underline;">this</span>.delay = animateDelay;
+    <span style="font-weight: bold; text-decoration: underline;">this</span>.graph = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Treant</span>(<span style="font-weight: bold; text-decoration: underline;">this</span>.config);
+    <span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments = <span style="font-weight: bold; text-decoration: underline;">false</span>;
+  }
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb635e98" class="outline-3">
+<h3 id="orgb635e98"><span class="section-number-3">2.2</span> Insert Methods</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+_insert takes a word to be inserted and the point of insertion and recursively inserts.
+insert is the outer interface for inserting a new word.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js" id="org339098e">
+  _insert(word, pointer, data) {
+    <span style="font-weight: bold;">if</span> (<span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments !== <span style="font-weight: bold; text-decoration: underline;">false</span> &amp;&amp; word.length !== 0) {
+      <span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments.innerHTML = <span style="font-style: italic;">"Inserting Letter "</span> + word[0] + <span style="font-style: italic;">" with "</span> + word.substring(1) + <span style="font-style: italic;">" remaining."</span>;
+    } <span style="font-weight: bold;">else</span> <span style="font-weight: bold;">if</span> (<span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments !== <span style="font-weight: bold; text-decoration: underline;">false</span> &amp;&amp; word.length === 0) {
+      <span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments.innerHTML = <span style="font-style: italic;">"The Insertion is complete!"</span>;
+    }
+
+    <span style="font-weight: bold;">if</span> (word.length === 0) <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">true</span>;
+    <span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">letter</span> = word[0]
+    <span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">found</span> = <span style="font-weight: bold; text-decoration: underline;">false</span>;
+    <span style="font-weight: bold;">if</span> (pointer.children) {
+      <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">childId</span> of pointer.children) {
+        <span style="font-weight: bold;">if</span> (data[childId].text.name === letter) {
+          found = <span style="font-weight: bold; text-decoration: underline;">true</span>;
+          pointer = data[childId];
+        }
+      }
+      <span style="font-weight: bold;">if</span> (!found) {
+        <span style="font-weight: bold;">if</span> (<span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments !== <span style="font-weight: bold; text-decoration: underline;">false</span>) {
+          <span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments.innerHTML += <span style="font-style: italic;">" Creating a new node for it, since it's not in the tree."</span>;
+        }
+        <span style="font-weight: bold; text-decoration: underline;">this</span>.graph.tree.addNode(pointer, { text: { name: letter } })
+        pointer = data[pointer.children[pointer.children.length - 1]];
+      }
+    } <span style="font-weight: bold;">else</span> {
+      <span style="font-weight: bold;">if</span> (<span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments !== <span style="font-weight: bold; text-decoration: underline;">false</span>) {
+        <span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments.innerHTML += <span style="font-style: italic;">" Creating a new node for it, since it's not in the tree."</span>;
+      }
+      <span style="font-weight: bold; text-decoration: underline;">this</span>.graph.tree.addNode(pointer, { text: { name: letter } })
+      pointer = data[pointer.children[0]];
+    }
+    <span style="font-weight: bold;">if</span> (<span style="font-weight: bold; text-decoration: underline;">this</span>.delay != 0) {
+      setTimeout(<span style="font-weight: bold;">function</span> (<span style="font-weight: bold; font-style: italic;">graph</span>) { graph._insert(word.substring(1), pointer, data) }, <span style="font-weight: bold; text-decoration: underline;">this</span>.delay, <span style="font-weight: bold; text-decoration: underline;">this</span>);
+    } <span style="font-weight: bold;">else</span> {
+      <span style="font-weight: bold; text-decoration: underline;">this</span>._insert(word.substring(1), pointer, data);
+    }
+  }
+
+  insert(word) {
+    word = word.toUpperCase() + <span style="font-style: italic;">'$'</span>
+    <span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">data</span> = <span style="font-weight: bold; text-decoration: underline;">this</span>.graph.tree.getNodeDb()[<span style="font-style: italic;">"db"</span>]
+    <span style="font-weight: bold; text-decoration: underline;">this</span>._insert(word, data[0], data)
+  }
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org020160c" class="outline-3">
+<h3 id="org020160c"><span class="section-number-3">2.3</span> Search Methods</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+_search takes a word to be inserted and the point of search and recursively searches.
+search is the outer interface for searching a word and highlighting it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js" id="orgc785dc1">
+  _search(word, pointer, data) {
+    <span style="font-weight: bold;">if</span> (<span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments !== <span style="font-weight: bold; text-decoration: underline;">false</span>) {
+      <span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments.innerHTML = <span style="font-style: italic;">"Searching Letter "</span> + word[0] + <span style="font-style: italic;">" with "</span> + word.substring(1) + <span style="font-style: italic;">" remaining."</span>;
+    }
+
+    <span style="font-weight: bold;">if</span> (word.length === 0) {
+      <span style="font-weight: bold;">if</span> (<span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments !== <span style="font-weight: bold; text-decoration: underline;">false</span>) {
+        <span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments.innerHTML = <span style="font-style: italic;">"We found the word as we encountered the $."</span>;
+      }
+      <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">true</span>;
+    }
+    <span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">found</span> = <span style="font-weight: bold; text-decoration: underline;">false</span>;
+    <span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">letter</span> = word[0]
+    <span style="font-weight: bold;">if</span> (!pointer.children) { <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">false</span>; }
+    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">childId</span> of pointer.children) {
+      <span style="font-weight: bold;">if</span> (data[childId].text.name === letter) {
+        found = <span style="font-weight: bold; text-decoration: underline;">true</span>;
+        pointer = data[childId];
+        pointer.HTMLclass = <span style="font-style: italic;">"active"</span>;
+        document.getElementById(<span style="font-weight: bold; text-decoration: underline;">this</span>.container).getElementsByClassName(<span style="font-style: italic;">'node'</span>)[pointer.id].classList.add(<span style="font-style: italic;">'active'</span>);
+      }
+    }
+    <span style="font-weight: bold;">if</span> (!found) { 
+      <span style="font-weight: bold;">if</span> (<span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments !== <span style="font-weight: bold; text-decoration: underline;">false</span>) {
+        <span style="font-weight: bold; text-decoration: underline;">this</span>.fullComments.innerHTML = <span style="font-style: italic;">"Could not find the word, "</span> + word[0] + <span style="font-style: italic;">" does not exist."</span>;
+      }
+      <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">false</span>; 
+    }
+    <span style="font-weight: bold;">if</span> (<span style="font-weight: bold; text-decoration: underline;">this</span>.delay != 0) {
+      setTimeout(<span style="font-weight: bold;">function</span> (<span style="font-weight: bold; font-style: italic;">graph</span>) { graph._search(word.substring(1), pointer, data); }, <span style="font-weight: bold; text-decoration: underline;">this</span>.delay, <span style="font-weight: bold; text-decoration: underline;">this</span>);
+    } <span style="font-weight: bold;">else</span> {
+      <span style="font-weight: bold; text-decoration: underline;">this</span>._search(word.substring(1), pointer, data);
+    }
+  }
+
+  search(word) {
+    word = word.toUpperCase() + <span style="font-style: italic;">'$'</span>
+    <span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">data</span> = <span style="font-weight: bold; text-decoration: underline;">this</span>.graph.tree.getNodeDb()[<span style="font-style: italic;">"db"</span>]
+    <span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">pointer</span> = data[0];
+    document.getElementById(<span style="font-weight: bold; text-decoration: underline;">this</span>.container).getElementsByClassName(<span style="font-style: italic;">'node'</span>)[0].classList.add(<span style="font-style: italic;">'active'</span>);
+    pointer.HTMLclass = <span style="font-style: italic;">"active"</span>;
+    <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">this</span>._search(word, pointer, data);
+  }
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org55339e0" class="outline-3">
+<h3 id="org55339e0"><span class="section-number-3">2.4</span> Path Methods</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+_path takes a word to be inserted and the point of search and recursively finds the path of search.
+path is the outer interface for getting the list of nodes on the search path for a word.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js" id="orgcf0c5fc">
+  _path(word, pointer, data) {
+    <span style="font-weight: bold;">if</span> (word.length === 0) <span style="font-weight: bold;">return</span> [<span style="font-weight: bold; text-decoration: underline;">true</span>];
+    <span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">found</span> = <span style="font-weight: bold; text-decoration: underline;">false</span>;
+    <span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">letter</span> = word[0];
+    <span style="font-weight: bold;">if</span> (!pointer.children) <span style="font-weight: bold;">return</span> [<span style="font-weight: bold; text-decoration: underline;">false</span>];
+    <span style="font-weight: bold;">for</span> (<span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">childId</span> of pointer.children) {
+      <span style="font-weight: bold;">if</span> (data[childId].text.name === letter) {
+        found = childId;
+        pointer = data[childId];
+      }
+    }
+    <span style="font-weight: bold;">if</span> (found === <span style="font-weight: bold; text-decoration: underline;">false</span>) { <span style="font-weight: bold;">return</span> [<span style="font-weight: bold; text-decoration: underline;">false</span>]; }
+    <span style="font-weight: bold;">return</span> [found].concat(<span style="font-weight: bold; text-decoration: underline;">this</span>._path(word.substring(1), pointer, data));
+  }
+
+  path(word) {
+    word = word.toUpperCase() + <span style="font-style: italic;">'$'</span>
+    <span style="font-weight: bold;">let</span> <span style="font-weight: bold; font-style: italic;">data</span> = <span style="font-weight: bold; text-decoration: underline;">this</span>.graph.tree.getNodeDb()[<span style="font-style: italic;">"db"</span>]
+    <span style="font-weight: bold;">return</span> [0].concat(<span style="font-weight: bold; text-decoration: underline;">this</span>._path(word, data[0], data));
+  }
+}
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaea4ebf" class="outline-2">
+<h2 id="orgaea4ebf"><span class="section-number-2">3</span> Tangle</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+<pre class="src src-js">&lt;&lt;<span style="font-weight: bold;">class</span>-tries-main&gt;&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: AnimeshSinha</p>
+<p class="date">Created: 2021-03-17 Wed 07:42</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
