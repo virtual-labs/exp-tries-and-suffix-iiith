@@ -106,16 +106,17 @@
           "content-type": "video",
           "source": "path-compression.md",
           "target": "path-compression.html"
-        }
-      ]
-    },
-	{
+        },
+{
       "unit-type": "task",
       "label": "Quiz",
       "content-type": "assesment",
       "source": "insertion-in-tries-quiz.json",
       "target": "insertion-in-tries-quiz.html"
+    }
+      ]
     },
+	
 
   {
       "unit-type": "lu",
