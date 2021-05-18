@@ -20,6 +20,13 @@
       "source": "recap.md",
       "target": "recap.html"
     },
+{
+      "unit-type": "task",
+      "label": "Quiz",
+      "content-type": "video",
+      "source": "pretest.json",
+      "target": "pretest.html"
+    },
     {
       "unit-type": "lu",
       "label": "Searching in Tries",
@@ -64,7 +71,14 @@
           "content-type": "simulation",
           "source": "simulation/search_exercise.html",
           "target": "search_exercise.html"
-        }
+        },
+	{
+      "unit-type": "task",
+      "label": "Quiz",
+      "content-type": "video",
+      "source": "searching-in-tries-quiz.json",
+      "target": "searching-in-tries-quiz.html"
+    }
       
       ]
     },
@@ -94,6 +108,13 @@
           "target": "path-compression.html"
         }
       ]
+    },
+	{
+      "unit-type": "task",
+      "label": "Quiz",
+      "content-type": "video",
+      "source": "insertion-in-tries-quiz.json",
+      "target": "insertion-in-tries-quiz.html"
     },
 
   {
@@ -128,6 +149,13 @@
         }
 
       ]
+    },
+	{
+      "unit-type": "task",
+      "label": "Quiz",
+      "content-type": "video",
+      "source": "posttest.json",
+      "target": "posttest.html"
     },
     {
       "unit-type": "task",
