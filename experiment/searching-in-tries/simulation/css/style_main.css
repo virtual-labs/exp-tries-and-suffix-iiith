@@ -94,11 +94,57 @@ body {
   background-color: rgb(150, 160, 163);
 }
 
-.legend .orange { background-color: #fb8415; }
-.legend .red { background-color: #f80000; }
-.legend .black { background-color: #000000; }
-.legend .green { background-color: rgb(152, 203, 59); }
-.legend .blue { background-color: rgb(23, 102, 150); }
+.legend .orange { background-color: #fb8415; 
+  border-radius: 0%;
+  width: 1.7vw;
+  margin-top: 1%;
+  height: 1.7vw;
+  border: 0.1vw solid black; 
+  float: left; 
+  border-radius: 50%;
+}
+.legend .red { background-color: #f80000; 
+  border-radius: 0%;
+  width: 1.7vw;
+  margin-top: 1%;
+  height: 1.7vw;
+  border: 0.1vw solid black; 
+  float: left; 
+  border-radius: 50%;
+}
+.legend .black { 
+  background-color: #000000; 
+  border-radius: 0%;
+  width: 1.7vw;
+  margin-top: 1%;
+  height: 1.7vw;
+  border: 0.1vw solid black; 
+  float: left; 
+  border-radius: 50%;
+}
+.legend .green { 
+  background-color: rgb(152, 203, 59); 
+  border-radius: 0%;
+  width: 1.7vw;
+  margin-top: 1%;
+  height: 1.7vw;
+  border: 0.1vw solid black; 
+  float: left; 
+  border-radius: 50%;
+  
+}
+.legend .blue { 
+  background-color: rgb(23, 102, 150); 
+  border-radius: 0%;
+  width: 1.7vw;
+  margin-top: 1%;
+  height: 1.7vw;
+  border: 0.1vw solid black; 
+  float: left; 
+  border-radius: 50%;
+}
+
+
 
 .container-fluid {
    padding-left: 0 !important;
