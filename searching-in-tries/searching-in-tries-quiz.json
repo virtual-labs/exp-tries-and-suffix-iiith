@@ -1,0 +1,28 @@
+[{
+	"question": "1. Upto how many children can each node in the trie have?",
+	"answers": {
+		"a": "26 (As many letters as in the Alphabet) ",
+		"b": "27 (As many letters as in the Alphabet + 1) ",
+		"c": "Depends on the size of the longest word ",
+		"d": "Depends on the size of the shortest word "
+	},
+	"correctAnswer": "b"
+}, {
+	"question": "2.  The number of '$' characters in a Trie equals:",
+	"answers": {
+		"a": "The number of letters in the alphabet",
+		"b": "The number of insert operations performed.",
+		"c": "The number of search operations performed. ",
+		"d": "The number of unique words entered into the Trie "
+	},
+	"correctAnswer": "d"
+}, {
+	"question": "3. If the letters '^', 'A', 'N', 'T', are encountered consecutively when searching but there is no '$' attached directly to the letter 'T', then which of the following are true?",
+	"answers": {
+		"a": "The Word 'ANT' is present in the Trie and has been found.",
+		"b": "The Word 'ANT' might be present somewhere else in the Trie but has not been found.",
+		"c": "The Word 'ANT' is not present, but other words starting with the letters 'ANT...' might be. ",
+		"d": "The word ANT is not present, and is not the prefix or suffix of any other string."
+	},
+	"correctAnswer": "c"
+}]

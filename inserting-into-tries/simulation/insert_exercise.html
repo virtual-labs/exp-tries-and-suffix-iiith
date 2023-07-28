@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+      <title>Tries and Suffix Tries</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css">
+      <link href="css/style_main.css" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/common-styles-responsive.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-12">
+              <div class="instruction-box">
+                <button class="collapsible">Instructions</button>
+                <div class="content">
+                  <ul>
+                    <li>You can see a linked list of a word and a Trie with a few
+                      words in it.</li>
+                    <li>Click on the <b>node in the TRIE</b> where you would start
+                      inserting this word from.</li>
+                    <li>Click on the first <b>letter of the WORD</b> which would be
+                      inserted in.</li>
+                    <li>NOTE: In the resultant Trie, the two nodes you clicked will
+                      be joined together.</li>
+                    <li>If you are right, both the nodes will be colored <b>GREEN</b>.
+                      Otherwise they will be RED.</li>
+                    <li>Click TRY NEXT WORD for starting on the next question,
+                      repeat a few times till comfortable.</li>
+                  </ul> 
+                </div>
+              </div>
+              
+          </div>
+      </div>
+      <div class="row" style="margin-top: 21px;">
+           <div class="col-sm-6">
+              <ul class="legend">
+                <li><span class="blue"></span> Unselected</li>
+                <li><span class="orange"></span> Selected</li>
+                <li><span class="green"></span> Selected and Correct</li>
+                <li><span class="red"></span> Selected and Wrong</li>
+              </ul>
+              
+           </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+           <div class="input-group">
+              <span class="input-group-addon">Insert</span>
+              <input id="insertion-demo-text" type="text" class="form-control" name="insert-text" placeholder="Word to Insert">
+           </div>
+        </div>
+        <div class="col-sm-2">
+            <!-- <input id="insertion-demo-submit" class="button-input" type="button" value="Insert" style="padding-left:60px !important;padding-right:60px !important;padding-top:10px !important;padding-bottom: 10px !important;"> -->
+            <button id="insertion-demo-submit" type="button" class="btn btn-primary btn-block">Insert</button> 
+        </div> 
+        <div class="col-sm-2">
+            <!-- <input id="reset-insert-demo" class="button-input" type="button" value="Reset Inserts" style="padding-left:35px !important;padding-right:35px !important;padding-top: 10px !important;padding-bottom: 10px !important;"> -->
+            <button id="reset-insert-demo" type="button" class="btn btn-primary btn-block">Reset Inserts</button> 
+        </div> 
+      </div>
+      <br/>
+      
+      <div class="row">
+        <div class="col-sm-8">
+           <div class="input-group">
+              <span class="input-group-addon">Search</span>
+              <input id="search-demo-text" type="text" class="form-control" name="search-text" placeholder="Word to Search">
+           </div>
+        </div>
+        <div class="col-sm-2">
+             <!-- <input id="search-demo-submit" class="button-input" type="button" value="Search" style="padding-left:55px !important;padding-right:55px !important;padding-top:10px !important;padding-bottom: 10px !important;"> -->
+             <button id="search-demo-submit" type="button" class="btn btn-primary btn-block">Search</button> 
+        </div> 
+        <div class="col-sm-2">
+             <!-- <input id="reset-search-demo" class="button-input" type="button" value="Reset Searches" style="padding-left:25px !important;padding-right:25px !important;padding-top: 10px !important;padding-bottom: 10px !important;"> -->
+             <button id="reset-search-demo" type="button" class="btn btn-primary btn-block">Reset Searches</button> 
+        </div> 
+      </div>
+      
+      <div class="row">
+        <div class="chart" id="render-1"></div>
+        <div class="chart" id="render-2"></div>
+      </div>
+      
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
+<script src="../../assets/js/instruction-box.js"></script>
+    
+    <script type="text/javascript" src="js/tries_main.js"></script>
+    <script type="text/javascript" src="js/insert_ex.js"></script>
+    <script type="text/javascript">
+    var insertExercise = new InsertExercise("#render-1", "#render-2",
+      ["Aztec", "Ankit", "Alex", "Apple", "Apples", "Bhuvanesh", "Mexico", "Mehico"],
+      ["Applacia", "Mexicano", "Arthur", "Meow", "Maple", "Mordor", "Bowling", "Cart"]
+    );
+    $('#reset-insertexercise').click(function () {
+      insertExercise.reset();
+    });
+    </script>
+  </body>
+</html>
