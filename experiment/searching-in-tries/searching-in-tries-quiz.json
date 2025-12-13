@@ -6,7 +6,13 @@
 		"c": "Depends on the size of the longest word ",
 		"d": "Depends on the size of the shortest word "
 	},
-	"correctAnswer": "b"
+	"correctAnswer": "b",
+	"explanations": {
+		"a": "Incorrect. While there are 26 letters in the alphabet, we also need to account for the end-of-word marker ($).",
+		"b": "Correct. Each node can have up to 27 children: 26 for letters (A-Z) plus 1 for the end-of-word marker ($).",
+		"c": "Incorrect. The number of children per node is fixed by the alphabet size, not by word lengths.",
+		"d": "Incorrect. The number of children per node is fixed by the alphabet size, not by word lengths."
+	}
 }, {
 	"question": "2.  The number of '$' characters in a Trie equals:",
 	"answers": {
@@ -15,7 +21,13 @@
 		"c": "The number of search operations performed. ",
 		"d": "The number of unique words entered into the Trie "
 	},
-	"correctAnswer": "d"
+	"correctAnswer": "d",
+	"explanations": {
+		"a": "Incorrect. The alphabet size is constant and unrelated to the number of words stored.",
+		"b": "Incorrect. If the same word is inserted multiple times, there's still only one '$' marker for that word.",
+		"c": "Incorrect. Search operations don't add '$' characters; they only read the trie.",
+		"d": "Correct. Each unique word in the trie has exactly one '$' marker to indicate the end of that word."
+	}
 }, {
 	"question": "3. If the letters '^', 'A', 'N', 'T', are encountered consecutively when searching but there is no '$' attached directly to the letter 'T', then which of the following are true?",
 	"answers": {
@@ -24,5 +36,11 @@
 		"c": "The Word 'ANT' is not present, but other words starting with the letters 'ANT...' might be. ",
 		"d": "The word ANT is not present, and is not the prefix or suffix of any other string."
 	},
-	"correctAnswer": "c"
+	"correctAnswer": "c",
+	"explanations": {
+		"a": "Incorrect. Without the '$' marker after 'T', the word 'ANT' is not stored as a complete word in the trie.",
+		"b": "Incorrect. The trie structure ensures there's only one path for a given sequence of characters from the root.",
+		"c": "Correct. The absence of '$' after 'T' means 'ANT' is not a complete word, but the path exists, indicating 'ANT' is a prefix of other words like 'ANTELOPE' or 'ANTENNA'.",
+		"d": "Incorrect. The path '^-A-N-T' exists, which means 'ANT' is a prefix of at least one word in the trie."
+	}
 }]

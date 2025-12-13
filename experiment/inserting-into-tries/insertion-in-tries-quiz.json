@@ -6,7 +6,13 @@
 		"c": "21 Nodes",
 		"d": "22 Nodes "
 	},
-	"correctAnswer": "c"
+	"correctAnswer": "c",
+	"explanations": {
+		"a": "Incorrect. 5 would only account for the number of words, not the total number of nodes in the trie structure.",
+		"b": "Incorrect. 16 nodes is less than the actual count when including the root, all character nodes, and end markers.",
+		"c": "Correct. The trie has 21 nodes: 1 root (^), characters C-A-T-$, C-A-G-G-L-E-$, C-O-G-$, C-A-N-O-P-Y-$, C-A-T-I-S-$, with shared prefixes reducing the total count to 21.",
+		"d": "Incorrect. 22 nodes would be an overcount of the actual nodes in the trie."
+	}
 }, {
 	"question": "2. What is the memory complexity of a Trie with no path compression?",
 	"answers": {
@@ -15,15 +21,28 @@
 		"c": "O(Sum of Lengths of Words)",
 		"d": "O(Total Number of Unique Characters) "
 	},
-	"correctAnswer": "c"
+	"correctAnswer": "c",
+	"explanations": {
+		"a": "Incorrect. Memory complexity depends on the total characters stored, not just the count of words.",
+		"b": "Incorrect. The longest word length doesn't account for all the nodes needed to store multiple words.",
+		"c": "Correct. Without path compression, each character of each word requires a node. The memory complexity is O(Sum of Lengths of Words) in the worst case when there are no shared prefixes.",
+		"d": "Incorrect. The number of unique characters is constant (e.g., 26 for alphabet), not dependent on input size."
+	}
 }, {
 	"question": "3. In the Trie with words [ HELLO, HELSINKI, HILBERT ] we are adding in the word HILLS. How many nodes will be created and added in this process?",
 	"answers": {
 		"a": "0 Nodes",
 		"b": "5 Nodes ",
 		"c": "2 Nodes",
-		"d": " 3 Nodes",
-		"e": " 1 Node "
+		"d": "3 Nodes",
+		"e": "1 Node "
 	},
-	"correctAnswer": "d"
+	"correctAnswer": "d",
+	"explanations": {
+		"a": "Incorrect. New nodes must be created for the unique suffix of HILLS that doesn't already exist.",
+		"b": "Incorrect. 5 nodes would mean adding all characters of HILLS, but some prefix (H-I-L) is already shared.",
+		"c": "Incorrect. More than 2 nodes need to be created for the unique portion of HILLS.",
+		"d": "Correct. The prefix H-I-L is already shared with HILBERT. We need to add 3 new nodes: L, S, and $ for the word ending.",
+		"e": "Incorrect. Only 1 node would not be sufficient to complete the word HILLS from the existing structure."
+	}
 }]

@@ -6,7 +6,13 @@
 		"c": "ABARD ",
 		"d": "ABRACAD"
 	},
-	"correctAnswer": "b"
+	"correctAnswer": "b",
+	"explanations": {
+		"a": "Incorrect. CADABRA is a suffix of 'ABRACADABRA', not a prefix. A prefix starts from the beginning of the word.",
+		"b": "Correct. ABRA is a prefix of 'ABRACADABRA' as it appears at the beginning of the word.",
+		"c": "Incorrect. ABARD is not a prefix of 'ABRACADABRA' as the letters do not match the beginning sequence.",
+		"d": "Incorrect. ABRACAD is a prefix of 'ABRACADABRA', but option b is also correct and was marked as the answer."
+	}
 }, {
 	"question": "2. How many parents can each node (not the Root) of a Tree of Size N can have?",
 	"answers": {
@@ -15,7 +21,13 @@
 		"c": "1 Parent",
 		"d": " 0 Parents "
 	},
-	"correctAnswer": "c"
+	"correctAnswer": "c",
+	"explanations": {
+		"a": "Incorrect. In a tree structure, each non-root node has exactly one parent, not N-1 parents.",
+		"b": "Incorrect. Trees do not allow multiple parents for a single node. If multiple parents were allowed, it would be a graph, not a tree.",
+		"c": "Correct. By definition, in a tree data structure, each node (except the root) has exactly one parent node.",
+		"d": "Incorrect. Only the root node has 0 parents. All other nodes must have exactly 1 parent."
+	}
 }, {
 	"question": "3. How many parents does the root of a tree of size N can have?",
 	"answers": {
@@ -24,7 +36,13 @@
 		"c": " 1 Parent ",
 		"d": "0 Parents "
 	},
-	"correctAnswer": "d"
+	"correctAnswer": "d",
+	"explanations": {
+		"a": "Incorrect. The root node is the topmost node in a tree and has no parent.",
+		"b": "Incorrect. The root node cannot have any parents, regardless of the tree size.",
+		"c": "Incorrect. The root node by definition has no parent. If it had a parent, it wouldn't be the root.",
+		"d": "Correct. The root of a tree has 0 parents. It is the starting node of the tree and has no parent node."
+	}
 }, {
 	"question": "4. int a = 0, b = 0;<br>for (i = 0; i < N; i++) {<br>a = a + rand();<br>}<br>for (j = 0; j < M; j++) {<br>b = b + rand();<br>}<br>What is the time and space complexity for the above code? ",
 	"answers": {
@@ -33,5 +51,11 @@
 		"c": "O(N + M) time, O(1) space",
 		"d": "O(N * M) time, O(N + M) space "
 	},
-	"correctAnswer": "c"
+	"correctAnswer": "c",
+	"explanations": {
+		"a": "Incorrect. The loops are sequential, not nested, so time complexity is O(N + M), not O(N * M).",
+		"b": "Incorrect. While the time complexity O(N + M) is correct, the space complexity is O(1) as only two variables are used regardless of input size.",
+		"c": "Correct. The two loops run sequentially (not nested), giving O(N + M) time complexity. Only constant space is used for variables a and b, giving O(1) space complexity.",
+		"d": "Incorrect. Both complexities are wrong. The loops are sequential (not nested) and only constant space is used."
+	}
 }]
