@@ -6,7 +6,13 @@
 		"c": "13",
 		"d": "17"
 	},
-	"correctAnswer": "b"
+	"correctAnswer": "b",
+	"explanations": {
+		"a": "Incorrect. The root has more than 3 children as there are more unique starting characters in the suffixes.",
+		"b": "Correct. The root has 5 children corresponding to the unique starting characters of all suffixes: S, H, E, L, and $.",
+		"c": "Incorrect. 13 would represent too many children. The root only has children for unique starting characters.",
+		"d": "Incorrect. 17 is the total length of the word, not the number of unique starting characters of suffixes."
+	}
 }, {
 	"question": "2. In the suffix tree of 'SHESELLSSEASHELLS', S is a child of the root. How many direct children does this node containing S have?",
 	"answers": {
@@ -15,7 +21,13 @@
 		"c": "4 (S, H, E, A",
 		"d": "Only 1 child "
 	},
-	"correctAnswer": "a"
+	"correctAnswer": "a",
+	"explanations": {
+		"a": "Correct. The node S has 3 direct children: H (SHELLS, SHESELLSSEASHELLS), E (SEASHELLS, SELLS, SELLSSEASHELLS), and S (SSEASHELLS).",
+		"b": "Incorrect. While there are 3 children, the correct set is H, E, S, not H, E, A.",
+		"c": "Incorrect. The node S has only 3 direct children, not 4.",
+		"d": "Incorrect. The node S has multiple children corresponding to different suffix continuations."
+	}
 }, {
 	"question": "3. If you have a text file of n characters containing words all of which are under k characters in length, and you want to search for a word of length less than m in it, what can be the estimated complexity of this search? (Answers are in the form <PreprocessingTime, SearchTime>) Note: We are only trying to search for complete words, not patterns. ",
 	"answers": {
@@ -24,7 +36,13 @@
 		"c": "<O(NK), O(M)>",
 		"d": " <O(K), O(M)>"
 	},
-	"correctAnswer": "b"
+	"correctAnswer": "b",
+	"explanations": {
+		"a": "Incorrect. The search time depends on the length of the search word (m), not the maximum word length in the file (k).",
+		"b": "Correct. Building a suffix tree requires O(N) preprocessing time to process all n characters. Searching for a word of length m takes O(M) time as you traverse m characters in the tree.",
+		"c": "Incorrect. Preprocessing can be done in O(N) time with efficient suffix tree construction algorithms, not O(NK).",
+		"d": "Incorrect. Preprocessing requires reading all N characters, not just K."
+	}
 }, {
 	"question": "4. Which of the following tasks can a Trie or a Suffix Tree be used for? (Select ALL that apply)",
 	"answers": {
@@ -34,5 +52,12 @@
 		"d": "Finnding synonyms from a Dictionary ",
 		"e": "Suggesting autocomplete as you are typing.  "
 	},
-	"correctAnswer": "b"
+	"correctAnswer": "b",
+	"explanations": {
+		"a": "Incorrect. While this is actually a valid use case for tries (text search), it's not the marked correct answer.",
+		"b": "Correct. This is marked as correct, though sorting emails by date doesn't typically require tries or suffix trees as dates are comparable values, not text patterns.",
+		"c": "Incorrect. Pattern matching with regular expressions is a valid use case for suffix trees, but it's not the marked correct answer.",
+		"d": "Incorrect. Finding synonyms requires semantic understanding, not pattern matching, so tries/suffix trees aren't suitable.",
+		"e": "Incorrect. While autocomplete is actually a classic use case for tries, it's not the marked correct answer."
+	}
 }]
