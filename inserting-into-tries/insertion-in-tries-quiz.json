@@ -1,0 +1,55 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. There is a Trie with the words [CAT, CAGGLE, COG, CANOPY, CATIS]. How many nodes does this Trie have, including the start and end nodes?",
+      "answers": {
+        "a": "5 Nodes",
+        "b": "16 Nodes",
+        "c": "21 Nodes",
+        "d": "22 Nodes"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. 5 is just the number of words, not the total number of nodes in the trie.",
+        "b": "Incorrect. 16 is less than the actual count when including the root, all character nodes, and end markers.",
+        "c": "Correct. The trie has 21 nodes: 1 root (^), and nodes for each character and end marker ($) in the words, with shared prefixes reducing the total count.",
+        "d": "Incorrect. 22 is an overcount; the correct total is 21 nodes."
+      }
+    },
+    {
+      "question": "2. What is the memory complexity of a Trie with no path compression?",
+      "answers": {
+        "a": "O(Number of Words)",
+        "b": "O(Length of the Longest Word)",
+        "c": "O(Sum of Lengths of Words)",
+        "d": "O(Total Number of Unique Characters)"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. Memory complexity depends on the total number of characters stored, not just the number of words.",
+        "b": "Incorrect. The longest word length does not account for all nodes needed to store multiple words.",
+        "c": "Correct. Without path compression, each character of each word requires a node, so the memory complexity is O(Sum of Lengths of Words) in the worst case.",
+        "d": "Incorrect. The number of unique characters is constant (e.g., 26 for the alphabet), not dependent on input size."
+      }
+    },
+    {
+      "question": "3. In the Trie with words [HELLO, HELSINKI, HILBERT], we are adding the word HILLS. How many nodes will be created and added in this process?",
+      "answers": {
+        "a": "0 Nodes",
+        "b": "5 Nodes",
+        "c": "2 Nodes",
+        "d": "3 Nodes",
+        "e": "1 Node"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. New nodes must be created for the unique suffix of HILLS that does not already exist in the trie.",
+        "b": "Incorrect. 5 nodes would mean adding all characters of HILLS, but some prefix (H-I-L) is already present.",
+        "c": "Incorrect. More than 2 nodes need to be created for the unique part of HILLS.",
+        "d": "Correct. The prefix H-I-L is already present. We need to add 3 new nodes: L, S, and $ for the word ending.",
+        "e": "Incorrect. Only 1 node would not be enough to complete the word HILLS from the existing structure."
+      }
+    }
+  ]
+}
